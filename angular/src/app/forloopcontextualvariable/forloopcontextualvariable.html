@@ -1,0 +1,9 @@
+<p>forloopcontextualvariable works!</p>
+
+@for(user of users; track user; let isEven = $even) {
+    <p class="{{ isEven ? 'bg-green-500' : 'bg-red-500' }} {{ $first ? 'text-2xl' : ''}} {{ $last ? 'text-4xl' : ''}}">Index: {{ $index }}: {{ user }}; count {{ $count }}</p>
+    <p>Is odd {{ $odd }}; Is even {{ $even }}</p>
+}
+@empty {
+    <p class="text-red-500">No User </p>
+}

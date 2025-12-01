@@ -1,0 +1,31 @@
+@if(display) {
+    <div class="w-20 h-20 bg-green-500"></div>
+}
+@else {
+    <div class="w-20 h-20 bg-red-500 animate-spin rounded-full">
+        <hr>
+        <div class="w-5 h-5 bg-green-500">
+            <p>🫟</p>
+        </div>
+
+        <hr>
+    </div>
+}
+
+<button (click)="toggle()" class="mt-20">{{ display ? 'Show' : 'Hide' }}</button>
+
+<hr>
+
+<h1>Switch Case</h1>
+
+@switch (display) {
+    @case (true) {
+        <p>Funny Boy</p>
+    }
+    @case (false) {
+        <p>Not Funny</p>
+    }
+    @default {
+        <p>Default</p>
+    }
+}

@@ -1,0 +1,11 @@
+<p>For loops!</p>
+
+@for (item of items; track items) {
+    <p>{{ item }}</p>
+}
+
+<ul>
+    @for (user of users; track user.id; let idx = $index) {
+        <li class="italic text-xs">. Index: {{ idx }}; User ID: {{ user.id }} {{ user.name }} is {{ user.age }} years old</li>
+    }
+</ul>
