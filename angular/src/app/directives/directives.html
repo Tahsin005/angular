@@ -1,58 +1,94 @@
-<p>directives works!</p>
+<p class="text-gray-700 text-lg font-medium">Directives works!</p>
 
-<h1 *ngIf="show" class="text-blue-600">Heading tag</h1>
+<!-- ngIf Example -->
+<h1 *ngIf="show" class="text-3xl font-bold text-blue-600 mt-4">
+  Heading tag
+</h1>
 
-<br>
-<br>
-<button (click)="toggleShow()">Toggle</button>
+<button 
+  (click)="toggleShow()"
+  class="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+  Toggle
+</button>
 
-<hr>
+<hr class="my-6 border-gray-300">
 
-<ul class="px-6">
-    <li *ngFor="let x of students">
-        {{ x }}
-    </li>
+<!-- Simple ngFor -->
+<ul class="px-6 space-y-1">
+  <li *ngFor="let x of students" class="text-gray-800">
+    {{ x }}
+  </li>
 </ul>
 
-<hr>
+<hr class="my-6 border-gray-300">
 
-<ul>
-    <li *ngFor="let student of studentsData">
-        {{ student.name }}, {{ student.age }}, {{ student.email }}
-    </li>
+<!-- ngFor with object data -->
+<ul class="space-y-2">
+  <li 
+    *ngFor="let student of studentsData" 
+    class="p-3 bg-gray-100 rounded-lg shadow-sm"
+  >
+    <span class="font-semibold">{{ student.name }}</span>, 
+    {{ student.age }}, 
+    <span class="text-blue-600">{{ student.email }}</span>
+  </li>
 </ul>
 
-<hr>
+<hr class="my-6 border-gray-300">
 
-<ul>
-    <li *ngFor="let x of nestedArray">
-        <p *ngFor="let y of x">{{ y }}</p>
-        <hr>
-    </li>
+<!-- Nested ngFor -->
+<ul class="space-y-4">
+  <li *ngFor="let x of nestedArray" class="p-4 border rounded-xl">
+    <p 
+      *ngFor="let y of x" 
+      class="text-gray-700"
+    >
+      {{ y }}
+    </p>
+    <hr class="mt-3 border-gray-300">
+  </li>
 </ul>
 
-<br>
-<br>
+<hr class="my-10 border-gray-300">
 
-<hr>
-
-<div *ngIf="show; else anotherBlock">
-    <h1>show is true</h1>
+<!-- ngIf with ng-template -->
+<div *ngIf="show; else anotherBlock" class="p-4 bg-green-100 rounded-xl">
+  <h1 class="text-green-600 font-semibold text-xl">
+    show is true
+  </h1>
 </div>
 
 <ng-template #anotherBlock>
-    <h1>show is false</h1>
+  <div class="p-4 bg-red-100 rounded-xl">
+    <h1 class="text-red-600 font-semibold text-xl">
+      show is false
+    </h1>
+  </div>
 </ng-template>
 
-<br><br>
+<hr class="my-10 border-gray-300">
 
-<hr>
+<!-- ngSwitch -->
+<div [ngSwitch]="color" class="p-6 border rounded-xl">
 
-<div [ngSwitch]="color">
-    
-    <h1 *ngSwitchCase="'red'" class="bg-red-500">Red</h1>
-    <h1 *ngSwitchCase="'green'" class="bg-green-500">Green</h1>
-    <h1 *ngSwitchCase="'blue'" class="bg-blue-500">Blue</h1>
-    <h1 *ngSwitchCase="'yellow'" class="bg-yellow-500">Yellow</h1>
-    <h1 *ngSwitchDefault class="bg-gray-100">Default</h1>
+  <h1 *ngSwitchCase="'red'" class="p-4 text-white bg-red-600 rounded-lg text-xl font-semibold">
+    Red
+  </h1>
+
+  <h1 *ngSwitchCase="'green'" class="p-4 text-white bg-green-600 rounded-lg text-xl font-semibold">
+    Green
+  </h1>
+
+  <h1 *ngSwitchCase="'blue'" class="p-4 text-white bg-blue-600 rounded-lg text-xl font-semibold">
+    Blue
+  </h1>
+
+  <h1 *ngSwitchCase="'yellow'" class="p-4 text-white bg-yellow-500 rounded-lg text-xl font-semibold">
+    Yellow
+  </h1>
+
+  <h1 *ngSwitchDefault class="p-4 bg-gray-200 rounded-lg text-xl font-semibold">
+    Default
+  </h1>
+
 </div>

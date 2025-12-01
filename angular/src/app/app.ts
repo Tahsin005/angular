@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 import { Profile } from './profile/profile';
 import { Conditionals } from './conditionals/conditionals';
@@ -10,10 +10,11 @@ import { Twowaybinding } from './twowaybinding/twowaybinding';
 import { Todolist } from './todolist/todolist';
 import { Dynamicstyling } from './dynamicstyling/dynamicstyling';
 import { Directives } from './directives/directives';
+import { AngRouting } from './ang-routing/ang-routing';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, Profile, Conditionals, Loops, Signalss, Forloopcontextualvariable, Twowaybinding, Todolist, Dynamicstyling, Directives],
+  imports: [RouterLink, RouterOutlet, Login, Profile, Conditionals, Loops, Signalss, Forloopcontextualvariable, Twowaybinding, Todolist, Dynamicstyling, Directives, AngRouting],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
