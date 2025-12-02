@@ -1,0 +1,7 @@
+<h1>Life Cycle Method in Angular</h1>
+
+<button (click)="updateCounter()">Count: {{ counter }}</button>
+
+@if(counter != 5) {
+  <app-user [counter]="counter" #user></app-user>
+}
