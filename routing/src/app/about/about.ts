@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -7,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './about.css',
 })
 export class About {
+  username: string|null = "";
 
+  constructor(private route:ActivatedRoute) {}
+
+  ngOnInit(): void {
+    // this.username = this.route.snapshot.paramMap.get('name')
+    // console.log(this.username)
+
+    this.route.queryParams.subscribe((params) => {
+      console.log(params);
+      this.username = params['name'];
+    })
+  }
 }
