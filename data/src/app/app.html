@@ -1,0 +1,14 @@
+<main>
+  <h1>Parent Component</h1>
+  <!-- <app-child [user]="userName"></app-child>
+
+  <select #item name="" (change)="onItemChange(item.value)">
+    <option value="tahsin">Tahsin</option>
+    <option value="ferdous">Ferdous</option>
+    <option value="rean">Rean</option>
+  </select> -->
+
+  @for(user of users; track user.id) {
+    <app-child [user]="user" (getUsers)="handleUsers($event)"></app-child>
+  }
+</main>

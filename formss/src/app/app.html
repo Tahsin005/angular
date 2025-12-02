@@ -1,0 +1,68 @@
+<!-- <main class="p-4">
+  <h1>Reactive Forms</h1>
+
+  {{name.value}}
+  {{password.value}}
+
+  <form action="">
+    <input type="text" placeholder="Enter name" [formControl]="name">
+    <br>
+    <input type="password" placeholder="Enter password" [formControl]="password">
+    <br> <br>
+    <button type="button" (click)="displayValue()" class="border border-amber-400 rounded-md px-4 py-1">Login</button>
+  </form>
+</main> -->
+
+<!-- <main>
+  <h1>Reactive Form Grouping</h1>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Enter name" formControlName="name">
+    <span *ngIf="name?.hasError('required')">Name is required</span>
+    @if(name?.invalid && (name?.dirty || name?.touched)) {
+      <span class="text-red-500">Name is required</span>
+    }
+    <br>
+    <input type="password" placeholder="Enter password" formControlName="password">
+    <span *ngIf="password?.hasError('required')">Password is required</span>
+    @if(password?.invalid && (password?.dirty || password?.touched)) {
+      <span class="text-red-500">Password is required</span>
+    }
+    <br> 
+    <input placeholder="Enter email" formControlName="email">
+    <span *ngIf="email?.hasError('required')">Email is required</span>
+    @if(email?.invalid && (email?.dirty || email?.touched)) {
+      <span class="text-red-500">Email is required</span>
+    }
+    <br>
+    <button class="border border-amber-400 rounded-md px-4 py-1">Login</button>
+  </form>
+</main> -->
+
+<main>
+  <h1>Template Driven Forms</h1>
+
+  <form action="" #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+    <input #name="ngModel" required type="text" placeholder="Enter name" name="name" ngModel>
+    <span *ngIf="name.invalid && name.touched">Name is required</span>
+    <br> <br>
+    <input #password="ngModel" required type="password" placeholder="Enter password" name="password" ngModel>
+    <span *ngIf="password.invalid && password.touched">Password is required</span>
+    <br> <br>
+    <select #gender="ngModel" name="gender" ngModel>
+      <option value="">Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <span *ngIf="gender.invalid && gender.touched">Please select a gender</span>
+    <br> <br>
+    <!-- <input type="range" name="range" min="0" max="20" ngModel> -->
+    <br> <br>
+    <button [disabled]="userForm.invalid" class="border border-amber-400 rounded-md px-4 py-1 {{userForm.invalid ? 'opacity-50 cursor-not-allowed' : ''}}">Add User</button>
+  </form>
+
+  {{userDetails?.name}}
+  {{userDetails?.password}}
+  {{userDetails?.gender}}
+  <!-- {{userDetails?.range}} -->
+</main>

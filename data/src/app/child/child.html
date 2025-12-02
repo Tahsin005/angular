@@ -1,0 +1,27 @@
+<p>child works!</p>
+
+<!-- {{user}} -->
+
+<!-- {{user.id}}
+{{user.name}} -->
+
+<!-- {{title}}
+{{title | uppercase}}
+{{title | titlecase}}
+<br>
+{{date | date}}
+<br>
+{{date | date:'fullDate'}}
+<br>
+{{date | date:'shortDate' | uppercase}}
+<br>
+{{date | date:'hh:mm:ss'}}
+<br>
+{{amount | currency:'EUR'}}
+<br> -->
+
+{{amount | currencyConvertor}}
+{{amount | currencyConvertor:12}}
+
+<button (click)="getUsers.emit(peoples)">Click 1</button> <br>
+<button (click)="loadData()">Click 2</button>

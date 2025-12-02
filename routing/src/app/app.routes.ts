@@ -4,11 +4,13 @@ import { Profile } from './profile/profile';
 import { Login } from './login/login';
 import { Home } from './home/home';
 import { PageNotFound } from './page-not-found/page-not-found';
+import { User } from './user/user';
 
 export const routes: Routes = [
     { path: '', component: Home},
     { path: 'about', component: About},
-    { path: 'profile', component: Profile},
+    { path: 'profile', component: Profile, data: { age: 24 }},
     { path: 'login', component: Login},
+    { path: 'user/:id', component: User},
     { path: '**', component: PageNotFound},
 ];

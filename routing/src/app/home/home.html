@@ -10,6 +10,10 @@
       Clean, modern, and easy to extend.
     </p>
 
+    @for(user of users; track user.id) {
+      <p><a routerLink="user/{{ user.id }}">{{ user.name }}</a></p>
+    }
+
     <div class="mt-6">
       <a
         [routerLink]="['about', { name: 'Tahsin'}]"
