@@ -9,7 +9,13 @@ import { Product } from './services/product';
   styleUrl: './app.css'
 })
 export class App {
+  products:{name:string,brand:string}[]|undefined;
   constructor(private productService:Product) {
     
+  }
+
+  loadProductData() {
+    this.products = this.productService.getProductData();
+    console.log(this.products);
   }
 }

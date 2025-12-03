@@ -13,7 +13,15 @@ export class Product {
       {
         name: 'mobile',
         brand: 'samsung',
-      }
+      },
+      {
+        name: 'laptop',
+        brand: 'dell',
+      },
+      {
+        name: 'tv',
+        brand: 'sony',
+      },
     ]
   }
 }
